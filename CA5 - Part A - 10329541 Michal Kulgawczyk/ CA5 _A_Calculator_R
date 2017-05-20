@@ -1,0 +1,82 @@
+#CA5 Part A - 10329541 - Michal Kulgawczyk 
+#Calculator - list of 10 functions
+
+#1 Addition
+
+addition <- function(x, y) {
+  return(x + y)
+}
+
+
+#2 Subtraction
+
+subtraction <- function(x, y) {
+  return(x - y)
+}
+
+#3 Multiplication
+
+multiply <- function(x, y) {
+  return(x * y)
+}
+
+#4 Division
+divide <- function(x,y) {
+  if(y == 0){ #guarding for 0 entries
+    return ("Error, dividing by zero equals zero")
+  } else {
+    return(x/y)
+  }
+}
+
+
+#5 Sqrt
+
+squareroot <-function(x) {
+  return (sqrt(x))
+}
+print (squareroot(100))
+
+
+#6 Factorial
+
+factorial <- function(x){
+  y <- 1
+  for(i in 1:x){
+    y <-y*((1:x)[i])
+  }
+  return(y)
+}
+
+
+#7 Exponential 
+
+exponent <-function(x,y) {
+  return (x**y)
+}
+
+#8 Sin
+sinus <- function(x) {
+  return(sin(x*pi/180))
+}
+
+
+#9 Cos
+cosinus <- function(x) {
+  return(cos(x*pi/180))
+}
+
+
+
+#10 Tan
+tangens <- function(x) {
+  if(x %% 180 ==0){
+    return (0)
+  } else if(x%% 90 ==0){
+    return ("error")
+  } else {
+    return (tan(x*pi/180))
+  }
+}
+
+
