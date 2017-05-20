@@ -1,0 +1,114 @@
+#CA5 part B - 1032954 - Michal Kulgawczyk
+
+#######################################################
+# 1.Addition
+
+def add(values):
+    return reduce (lambda a,b: a+b, values)
+    
+print add([47, 11, 42, 13])   
+
+
+#############################################################
+# 2. Subtraction
+
+def sub(values):
+    return reduce (lambda a,b: a-b, values)
+    
+print sub([1000, 11, 42, 13])   
+
+
+
+########################################################
+# 3. Division
+
+def divide(values):
+    return reduce (lambda a,b: a/float(b) if (b!= 0 and a !='NAN') else 'NA', values)
+    
+print divide([47, 11, 42, 13])  
+print divide([47, 11, 42, 13, 0])  
+
+#########################################################
+# 4. Multiplication
+
+def multiple(values):
+    return reduce (lambda a,b: a*b, values)
+    
+print multiple([47, 11, 42, 13])  
+
+
+###########################################################
+# 5. Temperature converter
+
+def fahrenheit(t):
+    return ((float(9)/5)*t + 32)
+def celsius(t):
+    return (float(5)/9*(t - 32))
+temp = (36.5, 37, 37.5, 39)
+
+F = map(fahrenheit, temp)
+print F
+C = map(celsius, F)
+print C
+
+
+################################################
+# 6. Maximum value
+
+def max(values):
+    return reduce(lambda a,b: a if (a>b) else b, values)
+    
+print max ([47, 11, 42, 13])
+
+
+################################################
+# 7. Minimum value
+
+def min(values):
+    return reduce(lambda a,b: a if (a<b) else b, values)
+    
+print min ([47, 11, 42, 13]) 
+
+
+################################################
+# 8. Filtering even values
+
+def is_even(values):
+    return filter (lambda x: x%2==0, values)
+    
+print is_even([47, 11, 42, 13])   
+
+
+###########################################################
+# 9. Filtering odd values
+
+def is_odd(values):
+    return filter (lambda x: x%2, values)
+    
+print is_odd([47, 11, 42, 13])  
+
+########################################################
+# 10. Temperature converter using map 
+
+def to_fahrenheit(values):
+    return map(fahrenheit,values)
+    
+print to_fahrenheit ([0, 37, 40, 100])
+    
+def to_celcius(values):
+    return map(celsius,values)    
+    
+print to_celcius([0, 32, 100, 212])    
+    
+ 
+########################################################
+# 11. Fibonacci numbers generator
+
+def fibonacci(n):
+    """Fibonacci numbers generator"""
+    a, b, counter = 0, 1, 0
+    while True:
+        if (counter >= n): return
+        yield a
+        a, b = b, a + b
+        counter += 1
